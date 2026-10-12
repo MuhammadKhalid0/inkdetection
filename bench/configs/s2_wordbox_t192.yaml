@@ -1,0 +1,75 @@
+# 2026-07-17 follow-up round (plan.md). Base = lean_t192_s42 (no DA, no stem,
+# surfrel kept). Output root = outputs2 (old runs untouched).
+# S2: word-box sampling (supervisor C1) — positives anchored on ink components,
+# negatives only from clean background (>=32px from any label). pos:neg 1:1.
+model:
+  name: unetrpp
+  feature_size: 16
+  dims:
+  - 32
+  - 64
+  - 128
+  - 256
+  depths:
+  - 3
+  - 3
+  - 3
+  - 3
+  num_heads: 4
+  patch_size:
+  - 1
+  - 4
+  - 4
+  pe_mode: 2d
+  depth_attn: false
+  da_gamma_init: 0.1
+  surface_relative: true
+  per_pixel: true
+  warp_stabilize: true
+shared:
+  texture_stem: false
+  stem_out_extra: 8
+  collapse: surface_relative
+data:
+  tile: 192
+  depth: 32
+  center_layer: 32
+  n_layers: 65
+  normalize: 255.0
+  label_file: ink_reg.npy
+  manifest_suffix: _wb_t192
+  pos_thresh: 0.05
+  samples_per_epoch: 4000
+  aug:
+    hflip: true
+    vflip: true
+    rot90: true
+    z_flip: true
+    z_flip_p: 0.5
+    z_shift: 2
+    z_shift_p: 0.3
+  sampler_mode: kind
+  pos_frac: 0.5
+  use_dirty_neg: false
+train:
+  loss: dice_bce
+  lr: 0.0001
+  weight_decay: 3.0e-05
+  epochs: 60
+  warmup_epochs: 3
+  batch: 4
+  num_workers: 8
+  amp: true
+  amp_dtype: bf16
+  grad_clip: 1.0
+  val_tau: 0.4
+  select_on: sweep
+  sweep_every: 1
+  patience: 20
+  seed: 42
+infer:
+  stride: 96
+  batch: 8
+output:
+  dir: /home/woody/iwi5/iwi5401h/vesuvius/outputs2
+  run_name: s2_wordbox_t192

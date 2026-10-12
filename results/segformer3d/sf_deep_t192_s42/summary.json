@@ -1,0 +1,16 @@
+{
+  "run": "sf_deep_t192_s42",
+  "select_on": "sweep",
+  "best_epoch": 18,
+  "best_f05": 0.7777145634775574,
+  "best_tau": 0.85,
+  "fixed_tau": 0.4,
+  "f05_at_fixed_tau": 0.6704500395837331,
+  "precision": 0.870493317972136,
+  "recall": 0.5452570043873102,
+  "iou_ink": 0.5043445686146805,
+  "iou_bg": 0.9027040125810657,
+  "miou": 0.7035242905978731,
+  "ema": false,
+  "label_file": "ink_reg.npy"
+}

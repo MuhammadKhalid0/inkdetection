@@ -1,0 +1,10 @@
+{
+  "run": "a2bs_t192_f7",
+  "seg": "20241113080880",
+  "ckpt": "/home/woody/iwi5/iwi5401h/vesuvius/outputs/a2bs_t192_f7/best.pt",
+  "epoch": 57,
+  "shape": [
+    1599,
+    11399
+  ]
+}

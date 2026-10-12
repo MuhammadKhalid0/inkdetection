@@ -1,0 +1,16 @@
+{
+  "run": "sf_osr_t192_s42",
+  "select_on": "sweep",
+  "best_epoch": 57,
+  "best_f05": 0.7950867765417633,
+  "best_tau": 0.85,
+  "fixed_tau": 0.4,
+  "f05_at_fixed_tau": 0.6837641186520739,
+  "precision": 0.860277217477501,
+  "recall": 0.6101441334953066,
+  "iou_ink": 0.5551321131370575,
+  "iou_bg": 0.9101629854803326,
+  "miou": 0.732647549308695,
+  "ema": false,
+  "label_file": "ink_reg.npy"
+}

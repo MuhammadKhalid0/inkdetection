@@ -1,0 +1,18 @@
+{
+  "run": "abl64_perpix",
+  "label_file": "ink_reg.npy",
+  "baseline": {
+    "f05": 0.6430253202903607,
+    "precision": 0.737368274091028,
+    "recall": 0.4253426203768761,
+    "tau": 0.75
+  },
+  "postprocessed": {
+    "tau": 0.7,
+    "min_size": 10000,
+    "f05": 0.6538751502316923,
+    "precision": 0.746022274828579,
+    "recall": 0.4376464311592824
+  },
+  "note": "tau+min_size selected on the VALIDATION segment (the designated selection set); component filter is label-free at inference time."
+}

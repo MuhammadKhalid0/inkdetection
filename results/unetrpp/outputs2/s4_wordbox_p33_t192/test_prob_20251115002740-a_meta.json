@@ -1,0 +1,10 @@
+{
+  "run": "s4_wordbox_p33_t192",
+  "seg": "20251115002740-auto_grown_20251115002740308_0_flatboi",
+  "ckpt": "/home/woody/iwi5/iwi5401h/vesuvius/outputs2/s4_wordbox_p33_t192/best.pt",
+  "epoch": 56,
+  "shape": [
+    11140,
+    49240
+  ]
+}

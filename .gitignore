@@ -1,0 +1,13 @@
+# data, checkpoints and large arrays are not part of this repository
+*.npy
+*.npz
+*.pt
+*.pth
+*.tif
+*.tiff
+*.zarr
+data/proc/
+__pycache__/
+*.pyc
+*.out
+*.bak*

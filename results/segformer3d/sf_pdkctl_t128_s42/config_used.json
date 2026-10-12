@@ -1,0 +1,85 @@
+{
+  "model": {
+    "name": "segformer3d",
+    "feature_size": 16,
+    "capacity": "S",
+    "stem": "dp",
+    "sr": "144_122",
+    "final": "expand",
+    "skip_stem": true,
+    "drop_path": 0.0,
+    "dw_norm": "bn",
+    "dec_proj_ln": true,
+    "dec_dim": 256,
+    "scale_mode": "head_dim",
+    "pdk": true,
+    "dcm": false,
+    "sr_overlap": false,
+    "dsm": false,
+    "pdk_stages": [
+      2,
+      3,
+      4
+    ],
+    "pdk_grid": [
+      8,
+      8,
+      8
+    ]
+  },
+  "shared": {
+    "texture_stem": false,
+    "collapse": "surface_relative"
+  },
+  "data": {
+    "tile": 128,
+    "depth": 32,
+    "center_layer": 32,
+    "n_layers": 65,
+    "normalize": 255.0,
+    "label_file": "ink_reg.npy",
+    "manifest_suffix": "_reg_t128",
+    "pos_thresh": 0.05,
+    "samples_per_epoch": 4000,
+    "use_uncertainty": true,
+    "halo": {
+      "enabled": true,
+      "factor": 2,
+      "mode": "self"
+    },
+    "aug": {
+      "hflip": true,
+      "vflip": true,
+      "rot90": true,
+      "z_flip": false,
+      "z_flip_p": 0.5,
+      "z_shift": 2,
+      "z_shift_p": 0.3
+    }
+  },
+  "train": {
+    "loss": "dice_bce_masked",
+    "lr": 0.0001,
+    "weight_decay": 3e-05,
+    "epochs": 60,
+    "warmup_epochs": 3,
+    "batch": 4,
+    "num_workers": 8,
+    "amp": true,
+    "amp_dtype": "bf16",
+    "grad_clip": 1.0,
+    "val_tau": 0.4,
+    "select_on": "sweep",
+    "sweep_every": 1,
+    "patience": 20,
+    "seed": 42
+  },
+  "infer": {
+    "stride": 64,
+    "batch": 4
+  },
+  "output": {
+    "dir": "/home/woody/iwi5/iwi5401h/segFormer/outputs",
+    "run_name": "sf_pdkctl_t128_s42"
+  }
+}

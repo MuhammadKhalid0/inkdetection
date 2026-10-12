@@ -1,0 +1,63 @@
+# 2026-08-10 nnFormer FINAL COMBO (plan Phase N3): best N2 config
+# (capacity S + dense stride-64 manifest, t256) + SR-PB, u1 masked loss,
+# z_flip off, ink_reg labels. Doubles as SR-PB's DEPLOYMENT-SCALE gate --
+# the stem lesson: a screen-scale win must be confirmed at t256 before it
+# enters the reported config. Reportable either way (SR-PB @ t256 cell).
+# CSSA deliberately NOT included: it failed its pre-registered 2x2 gate.
+model:
+  name: nnformer
+  feature_size: 16
+  capacity: S
+  patch_size:
+  - 1
+  - 4
+  - 4
+  gv_bottleneck: true
+  skip_attention: true
+  drop_path: 0.1
+  cssa: false
+  sr_pb: true
+shared:
+  texture_stem: false
+  collapse: surface_relative
+data:
+  tile: 256
+  depth: 32
+  center_layer: 32
+  n_layers: 65
+  normalize: 255.0
+  label_file: ink_reg.npy
+  manifest_suffix: _reg_t256_d64
+  pos_thresh: 0.05
+  samples_per_epoch: 4000
+  aug:
+    hflip: true
+    vflip: true
+    rot90: true
+    z_flip: false
+    z_flip_p: 0.5
+    z_shift: 2
+    z_shift_p: 0.3
+  use_uncertainty: true
+train:
+  loss: dice_bce_masked
+  lr: 0.0001
+  weight_decay: 3.0e-05
+  epochs: 60
+  warmup_epochs: 3
+  batch: 4
+  num_workers: 8
+  amp: true
+  amp_dtype: bf16
+  grad_clip: 1.0
+  val_tau: 0.4
+  select_on: sweep
+  sweep_every: 1
+  patience: 20
+  seed: 43
+infer:
+  stride: 128
+  batch: 4
+output:
+  dir: /home/woody/iwi5/iwi5401h/nnFormer/outputs
+  run_name: nnf_c1_t256_s43

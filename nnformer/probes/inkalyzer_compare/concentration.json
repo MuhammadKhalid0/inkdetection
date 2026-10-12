@@ -1,0 +1,42 @@
+{
+  "n_base_t192_r1_s42": {
+    "peak_idx": 16,
+    "mass_within_pm2": 0.5006146630786296,
+    "norm_entropy": 0.7919420943036699,
+    "peak_layer_abs": 32,
+    "tile": 192,
+    "f05": 0.7580986433670713
+  },
+  "n_srpb_t192_r1_s42": {
+    "peak_idx": 17,
+    "mass_within_pm2": 0.4441613861947193,
+    "norm_entropy": 0.8284249531880283,
+    "peak_layer_abs": 33,
+    "tile": 192,
+    "f05": 0.7707900144847604
+  },
+  "n_cssa_t192_r1_s42": {
+    "peak_idx": 16,
+    "mass_within_pm2": 0.4960158824431866,
+    "norm_entropy": 0.7994886361904563,
+    "peak_layer_abs": 32,
+    "tile": 192,
+    "f05": 0.7618273234426631
+  },
+  "nnf_s_d64_t256_s42": {
+    "peak_idx": 16,
+    "mass_within_pm2": 0.5037367249268554,
+    "norm_entropy": 0.784094660380306,
+    "peak_layer_abs": 32,
+    "tile": 256,
+    "f05": 0.7746557204092624
+  },
+  "nnf_c1_t256_s42": {
+    "peak_idx": 17,
+    "mass_within_pm2": 0.4825283840847514,
+    "norm_entropy": 0.7916017769199959,
+    "peak_layer_abs": 33,
+    "tile": 256,
+    "f05": 0.7843322775524558
+  }
+}

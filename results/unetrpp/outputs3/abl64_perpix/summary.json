@@ -1,0 +1,16 @@
+{
+  "run": "abl64_perpix",
+  "select_on": "sweep",
+  "best_epoch": 57,
+  "best_f05": 0.6430252148218331,
+  "best_tau": 0.75,
+  "fixed_tau": 0.4,
+  "f05_at_fixed_tau": 0.4839610075987194,
+  "precision": 0.737368274090974,
+  "recall": 0.42534262037685805,
+  "iou_ink": 0.36938257626654325,
+  "iou_bg": 0.870962684450815,
+  "miou": 0.6201726303586792,
+  "ema": false,
+  "label_file": "ink_reg.npy"
+}

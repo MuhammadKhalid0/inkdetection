@@ -1,0 +1,12 @@
+{
+  "run": "a2bs_t192_s43",
+  "select_on": "sweep",
+  "best_epoch": 58,
+  "best_f05": 0.7830954240299385,
+  "best_tau": 0.8,
+  "fixed_tau": 0.4,
+  "f05_at_fixed_tau": 0.6953567619418263,
+  "precision": 0.86642089794094,
+  "recall": 0.5655394373830319,
+  "label_file": "ink_reg.npy"
+}

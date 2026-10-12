@@ -1,0 +1,16 @@
+{
+  "run": "n_cssa_t128_r1_s42",
+  "select_on": "sweep",
+  "best_epoch": 56,
+  "best_f05": 0.7538526545436671,
+  "best_tau": 0.85,
+  "fixed_tau": 0.4,
+  "f05_at_fixed_tau": 0.6276692513044614,
+  "precision": 0.8581255466267107,
+  "recall": 0.5072865751321101,
+  "iou_ink": 0.46803266667600935,
+  "iou_bg": 0.8960272658780576,
+  "miou": 0.6820299662770335,
+  "ema": false,
+  "label_file": "ink_reg.npy"
+}

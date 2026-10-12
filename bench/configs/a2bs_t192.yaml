@@ -1,0 +1,73 @@
+# A2bs_t192 — context scaling continuation: best architecture (a2bs) at TILE 192.
+# Rationale (2026-07-04): tile 64->128 was the single biggest jump of the whole
+# ladder (a2bs_reg 0.639 -> a2bs_t128 0.719 swept F0.5) and TRIPLED left-word
+# recall (0.10 -> 0.31). Letters are up to ~1300 px wide, so 192 px still adds
+# letterform context. batch 4 (2.25x pixels/tile vs t128@b8; t128 used 14.2GB
+# on A40 -> t192@b4 fits comfortably). infer stride 96.
+# Same reg labels + fixed loop (select_on sweep, epochs 60).
+
+model:
+  name: unetrpp
+  feature_size: 16
+  dims: [32, 64, 128, 256]
+  depths: [3, 3, 3, 3]
+  num_heads: 4
+  patch_size: [1, 4, 4]
+  pe_mode: 2d
+  depth_attn: true
+  da_gamma_init: 0.1
+  surface_relative: true
+  per_pixel: true
+  warp_stabilize: true
+
+shared:
+  texture_stem: true
+  stem_out_extra: 8
+  collapse: surface_relative
+
+data:
+  tile: 192
+  depth: 32
+  center_layer: 32
+  n_layers: 65
+  normalize: 255.0
+  label_file: ink_reg.npy
+  manifest_suffix: _reg_t192
+  pos_thresh: 0.05
+  samples_per_epoch: 4000
+  aug:
+    hflip: true
+    vflip: true
+    rot90: true
+    z_flip: true
+    z_flip_p: 0.5
+    z_shift: 2
+    z_shift_p: 0.3
+
+train:
+  loss: dice_bce
+  lr: 1.0e-4
+  weight_decay: 3.0e-5
+  epochs: 60
+  warmup_epochs: 3
+  batch: 4
+  num_workers: 8
+  amp: true
+  # bf16 (2026-07-05): fp16 activations legitimately exceed 65504 around e12-13
+  # at tile 192 (deterministic, same seed) -> NaN loss forever + NaN val maps.
+  # bf16 has fp32-range exponent -> overflow impossible; same speed on A40.
+  amp_dtype: bf16
+  grad_clip: 1.0
+  val_tau: 0.4
+  select_on: sweep
+  sweep_every: 1
+  patience: 20
+  seed: 42
+
+infer:
+  stride: 96
+  batch: 8
+
+output:
+  dir: /home/woody/iwi5/iwi5401h/vesuvius/outputs
+  run_name: a2bs_t192

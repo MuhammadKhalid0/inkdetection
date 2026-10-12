@@ -1,0 +1,16 @@
+{
+  "run": "abl64_stem",
+  "select_on": "sweep",
+  "best_epoch": 58,
+  "best_f05": 0.5688804430271648,
+  "best_tau": 0.7,
+  "fixed_tau": 0.4,
+  "f05_at_fixed_tau": 0.44097032438419065,
+  "precision": 0.6801843919197501,
+  "recall": 0.34382776017713595,
+  "iou_ink": 0.2959786073059087,
+  "iou_bg": 0.8567457136226384,
+  "miou": 0.5763621604642736,
+  "ema": false,
+  "label_file": "ink_reg.npy"
+}

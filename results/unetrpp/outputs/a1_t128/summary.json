@@ -1,0 +1,12 @@
+{
+  "run": "a1_t128",
+  "select_on": "sweep",
+  "best_epoch": 42,
+  "best_f05": 0.6992509287118605,
+  "best_tau": 0.65,
+  "fixed_tau": 0.4,
+  "f05_at_fixed_tau": 0.62981226145644,
+  "precision": 0.7845417460107352,
+  "recall": 0.4873317759103151,
+  "label_file": "ink_reg.npy"
+}

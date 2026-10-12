@@ -1,0 +1,18 @@
+{
+  "run": "g3_zshift6_t192",
+  "label_file": "ink_reg.npy",
+  "baseline": {
+    "f05": 0.761642327610569,
+    "precision": 0.8598891508285871,
+    "recall": 0.5227394749235451,
+    "tau": 0.65
+  },
+  "postprocessed": {
+    "tau": 0.6,
+    "min_size": 10000,
+    "f05": 0.7889434633412787,
+    "precision": 0.8897806769551432,
+    "recall": 0.5428587251621892
+  },
+  "note": "tau+min_size selected on the VALIDATION segment (the designated selection set); component filter is label-free at inference time."
+}

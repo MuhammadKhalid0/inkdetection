@@ -1,0 +1,68 @@
+# A1_t128 — a1 architecture (DA-EPA depth attention) at TILE 128, registered labels,
+# fixed training loop (2026-07-03).
+# Rationale: the LAST untested lever for the left-word failure. Letters are 300-1300px
+# wide; a 64px tile inside a weak-contrast stroke sees uniform faint texture with NO
+# letter-shape context. Shape prior matters most exactly where local contrast fails
+# (left word Cohen's d 0.24 vs right 0.48). Tile 128 quadruples in-plane context.
+# Uses manifests train_reg_t128.csv/val_reg_t128.csv (tile 128, stride 64).
+# batch 8 (4x pixels/tile vs t64@b16 -> same pixels/step, fits A40 easily).
+# samples_per_epoch stays 4000 -> same tiles/epoch, 500 steps/epoch.
+
+model:
+  name: unetrpp
+  feature_size: 16
+  dims: [32, 64, 128, 256]
+  depths: [3, 3, 3, 3]
+  num_heads: 4
+  patch_size: [1, 4, 4]
+  pe_mode: 2d
+  depth_attn: true
+  da_gamma_init: 0.1
+
+shared:
+  texture_stem: true
+  stem_out_extra: 8
+  collapse: learned
+
+data:
+  tile: 128
+  depth: 32
+  center_layer: 32
+  n_layers: 65
+  normalize: 255.0
+  label_file: ink_reg.npy
+  manifest_suffix: _reg_t128
+  pos_thresh: 0.05
+  samples_per_epoch: 4000
+  aug:
+    hflip: true
+    vflip: true
+    rot90: true
+    z_flip: true
+    z_flip_p: 0.5
+    z_shift: 2
+    z_shift_p: 0.3
+
+train:
+  loss: dice_bce
+  lr: 1.0e-4
+  weight_decay: 3.0e-5
+  epochs: 60
+  warmup_epochs: 3
+  batch: 8
+  num_workers: 8
+  amp: true
+  grad_clip: 1.0
+  val_tau: 0.4
+  select_on: sweep
+  sweep_every: 1
+  patience: 20
+  seed: 42
+
+infer:
+  stride: 64
+  batch: 16
+
+output:
+  dir: /home/woody/iwi5/iwi5401h/vesuvius/outputs
+  run_name: a1_t128

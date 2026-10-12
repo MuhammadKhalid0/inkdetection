@@ -1,0 +1,29 @@
+[
+  {
+    "run": "lean_t192_s42",
+    "n_tiles": 1556,
+    "pearson_r": 0.2549519776582683,
+    "mae_layers": 6.054680484732502,
+    "verdict": "does NOT track the surface (adaptive gating reading)",
+    "s_hat_mean": 15.748715041535679,
+    "s_ref_mean": 13.917095115681233
+  },
+  {
+    "run": "lean_t192_s43",
+    "n_tiles": 1556,
+    "pearson_r": 0.16722496603076417,
+    "mae_layers": 6.155373851560382,
+    "verdict": "does NOT track the surface (adaptive gating reading)",
+    "s_hat_mean": 15.815322443268293,
+    "s_ref_mean": 13.917095115681233
+  },
+  {
+    "run": "lean_t192_s44",
+    "n_tiles": 1556,
+    "pearson_r": -0.20973099460064845,
+    "mae_layers": 6.140015633982681,
+    "verdict": "does NOT track the surface (adaptive gating reading)",
+    "s_hat_mean": 15.514791437163758,
+    "s_ref_mean": 13.917095115681233
+  }
+]

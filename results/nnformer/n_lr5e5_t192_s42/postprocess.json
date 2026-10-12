@@ -1,0 +1,18 @@
+{
+  "run": "n_lr5e5_t192_s42",
+  "label_file": "ink_reg.npy",
+  "baseline": {
+    "f05": 0.7701184987522657,
+    "precision": 0.8442596309505543,
+    "recall": 0.569921274888541,
+    "tau": 0.8
+  },
+  "postprocessed": {
+    "tau": 0.75,
+    "min_size": 10000,
+    "f05": 0.7936669959463456,
+    "precision": 0.8635610259258042,
+    "recall": 0.5995605057143558
+  },
+  "note": "tau+min_size selected on the VALIDATION segment (the designated selection set); component filter is label-free at inference time."
+}

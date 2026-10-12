@@ -1,0 +1,12 @@
+{
+  "run": "abl_da",
+  "select_on": "sweep",
+  "best_epoch": 47,
+  "best_f05": 0.7877035730735475,
+  "best_tau": 0.65,
+  "fixed_tau": 0.4,
+  "f05_at_fixed_tau": 0.7427044484485299,
+  "precision": 0.8643381990225348,
+  "recall": 0.5814810399391666,
+  "label_file": "ink_reg.npy"
+}

@@ -1,0 +1,79 @@
+# A3 — A1 (best ladder rung) retrained on RE-REGISTERED labels + photometric aug.
+# Two data-level fixes motivated by the 2026-07-02 investigation:
+#   1. label_file ink_reg.npy: GT ink labels sit 10-45px BELOW the physical ink
+#      signal on ALL segments (detrended-slab contrast scan; val seg dy(x) -54..-22,
+#      spatially varying). Training on registered labels = crisper targets; eval on
+#      registered labels = honest score (existing runs gain +0.03..+0.07 F0.5 by
+#      re-scoring alone; a1 0.562->0.628).
+#   2. Photometric augmentation (methodology §2.5, never previously implemented):
+#      gain/bias/gamma/contrast/noise jitter at TRAIN time teaches brightness/
+#      contrast invariance for the weak-contrast left-word regime WITHOUT moving
+#      the inference operating point (the failure mode of pertile/spatial zscore).
+# Architecture identical to a1. Uses train_reg.csv/val_reg.csv manifests
+# (python -m data.tiling --label-file ink_reg.npy --suffix _reg).
+
+model:
+  name: unetrpp
+  feature_size: 16
+  dims: [32, 64, 128, 256]
+  depths: [3, 3, 3, 3]
+  num_heads: 4
+  patch_size: [1, 4, 4]
+  pe_mode: 2d
+  depth_attn: true
+  da_gamma_init: 0.1
+
+shared:
+  texture_stem: true
+  stem_out_extra: 8
+  collapse: learned
+
+data:
+  tile: 64
+  depth: 32
+  center_layer: 32
+  n_layers: 65
+  normalize: 255.0
+  label_file: ink_reg.npy      # A3: registered labels (train + val scoring)
+  manifest_suffix: _reg        # A3: manifests built from ink_reg.npy
+  pos_thresh: 0.05
+  samples_per_epoch: 4000
+  aug:
+    hflip: true
+    vflip: true
+    rot90: true
+    z_flip: true
+    z_flip_p: 0.5
+    z_shift: 2
+    z_shift_p: 0.3
+    brightness: 0.15           # A3: additive gain jitter (normalized units)
+    brightness_p: 0.5
+    contrast: 0.3              # A3: contrast scale jitter (x0.7..x1.3)
+    contrast_p: 0.5
+    gamma: 0.3                 # A3: gamma jitter exp(U(-0.3,0.3)) ~ x0.74..x1.35
+    gamma_p: 0.3
+    noise_std: 0.02            # A3: Gaussian noise
+    noise_p: 0.3
+
+train:
+  loss: dice_bce
+  lr: 1.0e-4
+  weight_decay: 3.0e-5
+  epochs: 120
+  warmup_epochs: 3
+  batch: 16
+  num_workers: 8
+  amp: true
+  grad_clip: 1.0
+  val_tau: 0.4
+  sweep_every: 5
+  patience: 20
+  seed: 42
+
+infer:
+  stride: 32
+  batch: 32
+
+output:
+  dir: /home/woody/iwi5/iwi5401h/vesuvius/outputs
+  run_name: a3

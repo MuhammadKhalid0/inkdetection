@@ -1,0 +1,73 @@
+# 2026-07-18 c1 COMBO (plan 14.3): everything that survived screening, stacked
+# at the winning scale: t256 lean (tile-level surfrel) + u1 uncertainty ignore-
+# band (dice_bce_masked, +0.012 raw at t192) + z_flip OFF (+0.009/+0.011 at
+# t192). TTA applied at rescoring time (adopted, +0.0035). A100.
+model:
+  name: unetrpp
+  feature_size: 16
+  dims:
+  - 32
+  - 64
+  - 128
+  - 256
+  depths:
+  - 3
+  - 3
+  - 3
+  - 3
+  num_heads: 4
+  patch_size:
+  - 1
+  - 4
+  - 4
+  pe_mode: 2d
+  depth_attn: false
+  da_gamma_init: 0.1
+  surface_relative: true
+  per_pixel: false
+  warp_stabilize: false
+shared:
+  texture_stem: false
+  stem_out_extra: 8
+  collapse: surface_relative
+data:
+  tile: 256
+  depth: 32
+  center_layer: 32
+  n_layers: 65
+  normalize: 255.0
+  label_file: ink_reg.npy
+  manifest_suffix: _reg_t256
+  pos_thresh: 0.05
+  samples_per_epoch: 4000
+  aug:
+    hflip: true
+    vflip: true
+    rot90: true
+    z_flip: false
+    z_flip_p: 0.5
+    z_shift: 2
+    z_shift_p: 0.3
+  use_uncertainty: true
+train:
+  loss: dice_bce_masked
+  lr: 0.0001
+  weight_decay: 3.0e-05
+  epochs: 60
+  warmup_epochs: 3
+  batch: 4
+  num_workers: 8
+  amp: true
+  amp_dtype: bf16
+  grad_clip: 1.0
+  val_tau: 0.4
+  select_on: sweep
+  sweep_every: 1
+  patience: 20
+  seed: 44
+infer:
+  stride: 128
+  batch: 4
+output:
+  dir: /home/woody/iwi5/iwi5401h/vesuvius/outputs5
+  run_name: c1_t256_s44

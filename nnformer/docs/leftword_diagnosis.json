@@ -1,0 +1,280 @@
+{
+ "windows": {
+  "0-1500": {
+   "unetrpp_c1_t256": [
+    null,
+    null
+   ],
+   "unetrpp_t256_lean": [
+    null,
+    null
+   ],
+   "unetrpp_a2bs_t192": [
+    null,
+    null
+   ],
+   "nnformer_n_base": [
+    null,
+    null
+   ]
+  },
+  "750-2250": {
+   "unetrpp_c1_t256": [
+    13,
+    1.018
+   ],
+   "unetrpp_t256_lean": [
+    15,
+    1.022
+   ],
+   "unetrpp_a2bs_t192": [
+    15,
+    1.016
+   ],
+   "nnformer_n_base": [
+    13,
+    1.015
+   ]
+  },
+  "1500-3000": {
+   "unetrpp_c1_t256": [
+    17,
+    1.031
+   ],
+   "unetrpp_t256_lean": [
+    15,
+    1.024
+   ],
+   "unetrpp_a2bs_t192": [
+    15,
+    1.021
+   ],
+   "nnformer_n_base": [
+    13,
+    1.018
+   ]
+  },
+  "2250-3750": {
+   "unetrpp_c1_t256": [
+    15,
+    1.025
+   ],
+   "unetrpp_t256_lean": [
+    14,
+    1.021
+   ],
+   "unetrpp_a2bs_t192": [
+    12,
+    1.015
+   ],
+   "nnformer_n_base": [
+    10,
+    1.01
+   ]
+  },
+  "3000-4500": {
+   "unetrpp_c1_t256": [
+    11,
+    1.017
+   ],
+   "unetrpp_t256_lean": [
+    10,
+    1.013
+   ],
+   "unetrpp_a2bs_t192": [
+    10,
+    1.014
+   ],
+   "nnformer_n_base": [
+    10,
+    1.013
+   ]
+  },
+  "3750-5250": {
+   "unetrpp_c1_t256": [
+    10,
+    1.013
+   ],
+   "unetrpp_t256_lean": [
+    9,
+    1.009
+   ],
+   "unetrpp_a2bs_t192": [
+    10,
+    1.01
+   ],
+   "nnformer_n_base": [
+    11,
+    1.012
+   ]
+  },
+  "4500-6000": {
+   "unetrpp_c1_t256": [
+    10,
+    1.007
+   ],
+   "unetrpp_t256_lean": [
+    9,
+    1.005
+   ],
+   "unetrpp_a2bs_t192": [
+    8,
+    1.004
+   ],
+   "nnformer_n_base": [
+    5,
+    1.001
+   ]
+  },
+  "5250-6750": {
+   "unetrpp_c1_t256": [
+    6,
+    1.003
+   ],
+   "unetrpp_t256_lean": [
+    4,
+    1.001
+   ],
+   "unetrpp_a2bs_t192": [
+    6,
+    1.002
+   ],
+   "nnformer_n_base": [
+    -5,
+    1.001
+   ]
+  },
+  "6000-7500": {
+   "unetrpp_c1_t256": [
+    0,
+    1.0
+   ],
+   "unetrpp_t256_lean": [
+    -1,
+    1.0
+   ],
+   "unetrpp_a2bs_t192": [
+    1,
+    1.0
+   ],
+   "nnformer_n_base": [
+    1,
+    1.0
+   ]
+  },
+  "6750-8250": {
+   "unetrpp_c1_t256": [
+    3,
+    1.001
+   ],
+   "unetrpp_t256_lean": [
+    3,
+    1.001
+   ],
+   "unetrpp_a2bs_t192": [
+    5,
+    1.002
+   ],
+   "nnformer_n_base": [
+    6,
+    1.003
+   ]
+  },
+  "7500-9000": {
+   "unetrpp_c1_t256": [
+    1,
+    1.0
+   ],
+   "unetrpp_t256_lean": [
+    1,
+    1.0
+   ],
+   "unetrpp_a2bs_t192": [
+    0,
+    1.0
+   ],
+   "nnformer_n_base": [
+    1,
+    1.0
+   ]
+  },
+  "8250-9750": {
+   "unetrpp_c1_t256": [
+    -4,
+    1.002
+   ],
+   "unetrpp_t256_lean": [
+    -5,
+    1.004
+   ],
+   "unetrpp_a2bs_t192": [
+    -7,
+    1.005
+   ],
+   "nnformer_n_base": [
+    -8,
+    1.006
+   ]
+  },
+  "9000-10500": {
+   "unetrpp_c1_t256": [
+    -9,
+    1.009
+   ],
+   "unetrpp_t256_lean": [
+    -9,
+    1.009
+   ],
+   "unetrpp_a2bs_t192": [
+    -11,
+    1.012
+   ],
+   "nnformer_n_base": [
+    -12,
+    1.014
+   ]
+  },
+  "9750-11250": {
+   "unetrpp_c1_t256": [
+    -13,
+    1.025
+   ],
+   "unetrpp_t256_lean": [
+    -12,
+    1.018
+   ],
+   "unetrpp_a2bs_t192": [
+    -14,
+    1.022
+   ],
+   "nnformer_n_base": [
+    -16,
+    1.024
+   ]
+  },
+  "10500-11479": {
+   "unetrpp_c1_t256": [
+    -18,
+    1.065
+   ],
+   "unetrpp_t256_lean": [
+    -17,
+    1.057
+   ],
+   "unetrpp_a2bs_t192": [
+    -14,
+    1.035
+   ],
+   "nnformer_n_base": [
+    -15,
+    1.037
+   ]
+  }
+ },
+ "taus": {
+  "unetrpp_c1_t256": 0.7,
+  "unetrpp_t256_lean": 0.65,
+  "unetrpp_a2bs_t192": 0.65,
+  "nnformer_n_base": 0.8
+ }
+}

@@ -1,0 +1,12 @@
+{
+  "run": "a2bs_t128",
+  "select_on": "sweep",
+  "best_epoch": 46,
+  "best_f05": 0.7146398684556748,
+  "best_tau": 0.75,
+  "fixed_tau": 0.4,
+  "f05_at_fixed_tau": 0.628978651429321,
+  "precision": 0.8118682895469969,
+  "recall": 0.48317991617646383,
+  "label_file": "ink_r eg.npy"
+}

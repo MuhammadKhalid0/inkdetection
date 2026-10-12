@@ -1,0 +1,16 @@
+{
+  "run": "n_vffc_t192_r1_s42",
+  "select_on": "sweep",
+  "best_epoch": 48,
+  "best_f05": 0.7843832609339707,
+  "best_tau": 0.8,
+  "fixed_tau": 0.4,
+  "f05_at_fixed_tau": 0.6905541118243149,
+  "precision": 0.8535508067841353,
+  "recall": 0.5923720093377488,
+  "iou_ink": 0.5377197496568109,
+  "iou_bg": 0.9067355270549502,
+  "miou": 0.7222276383558806,
+  "ema": false,
+  "label_file": "ink_reg.npy"
+}

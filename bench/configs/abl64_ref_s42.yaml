@@ -1,0 +1,74 @@
+# 2026-07-17 t64 ablation RE-RUN under the FIXED loop (user request).
+# Motivation: every original t64 verdict (stem +0.10, DA +0.05, surfrel -0.02)
+# was measured under the broken regime — LR stuck at 4-8.5e-5 (120-ep cosine
+# never completed), val |Delta|/epoch 0.04-0.09 in the tail. This suite mirrors
+# the t192 ablation toggles exactly, at t64, reg labels, sweep selection,
+# 60-ep cosine. Reference = a2bs_reg recipe, seeds 42/43/44 (noise floor).
+# Reference: a2bs_reg recipe rerun (seed band -> t64 noise floor).
+model:
+  name: unetrpp
+  feature_size: 16
+  dims:
+  - 32
+  - 64
+  - 128
+  - 256
+  depths:
+  - 3
+  - 3
+  - 3
+  - 3
+  num_heads: 4
+  patch_size:
+  - 1
+  - 4
+  - 4
+  pe_mode: 2d
+  depth_attn: true
+  da_gamma_init: 0.1
+  surface_relative: true
+  per_pixel: true
+  warp_stabilize: true
+shared:
+  texture_stem: true
+  stem_out_extra: 8
+  collapse: surface_relative
+data:
+  tile: 64
+  depth: 32
+  center_layer: 32
+  n_layers: 65
+  normalize: 255.0
+  label_file: ink_reg.npy
+  manifest_suffix: _reg
+  pos_thresh: 0.05
+  samples_per_epoch: 4000
+  aug:
+    hflip: true
+    vflip: true
+    rot90: true
+    z_flip: true
+    z_flip_p: 0.5
+    z_shift: 2
+    z_shift_p: 0.3
+train:
+  loss: dice_bce
+  lr: 0.0001
+  weight_decay: 3.0e-05
+  epochs: 60
+  warmup_epochs: 3
+  batch: 16
+  num_workers: 8
+  amp: true
+  grad_clip: 1.0
+  val_tau: 0.4
+  select_on: sweep
+  sweep_every: 1
+  patience: 20
+  seed: 42
+infer:
+  stride: 32
+  batch: 32
+output:
+  dir: /home/woody/iwi5/iwi5401h/vesuvius/outputs3
+  run_name: abl64_ref_s42

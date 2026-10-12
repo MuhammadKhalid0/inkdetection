@@ -1,0 +1,18 @@
+{
+  "run": "t2_nozflip_t192",
+  "label_file": "ink_reg.npy",
+  "baseline": {
+    "f05": 0.7843441661059127,
+    "precision": 0.8920993215112456,
+    "recall": 0.5288355768848665,
+    "tau": 0.85
+  },
+  "postprocessed": {
+    "tau": 0.8,
+    "min_size": 10000,
+    "f05": 0.8041752548239876,
+    "precision": 0.8954323506434387,
+    "recall": 0.5712867679076166
+  },
+  "note": "tau+min_size selected on the VALIDATION segment (the designated selection set); component filter is label-free at inference time."
+}

@@ -1,0 +1,12 @@
+{
+  "run": "abl_labels",
+  "select_on": "sweep",
+  "best_epoch": 49,
+  "best_f05": 0.6995836892645425,
+  "best_tau": 0.65,
+  "fixed_tau": 0.4,
+  "f05_at_fixed_tau": 0.6683618942040801,
+  "precision": 0.7750590962666284,
+  "recall": 0.5034714540428171,
+  "label_file": "ink.npy"
+}

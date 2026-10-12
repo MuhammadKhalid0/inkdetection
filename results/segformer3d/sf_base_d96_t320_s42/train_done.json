@@ -1,0 +1,8 @@
+{
+  "reason": "early_stop",
+  "best_f05": 0.800596456939512,
+  "best_epoch": 38,
+  "best_tau": 0.75,
+  "epochs_run": 59,
+  "finished_at": 1789300371.609574
+}

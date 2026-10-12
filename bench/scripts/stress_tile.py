@@ -1,0 +1,1 @@
+../../segformer3d/scripts/stress_tile.py

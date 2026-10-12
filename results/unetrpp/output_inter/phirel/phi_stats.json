@@ -1,0 +1,72 @@
+[
+  {
+    "run": "a2bs_reg",
+    "kind": "surface_relative",
+    "peak_r": 0.0,
+    "entropy": 0.841348237876299,
+    "entropy_init": 0.8441986464982045,
+    "mass_pm4": 0.4390491843223572
+  },
+  {
+    "run": "a2bs_t128",
+    "kind": "surface_relative",
+    "peak_r": 0.0,
+    "entropy": 0.8410629275030553,
+    "entropy_init": 0.8441986464982045,
+    "mass_pm4": 0.4404408931732178
+  },
+  {
+    "run": "lean_t192_s42",
+    "kind": "surface_relative",
+    "peak_r": 0.0,
+    "entropy": 0.840829580677016,
+    "entropy_init": 0.8441986464982045,
+    "mass_pm4": 0.44168731570243835
+  },
+  {
+    "run": "lean_t192_s43",
+    "kind": "surface_relative",
+    "peak_r": 0.0,
+    "entropy": 0.8404704970285609,
+    "entropy_init": 0.8441986464982045,
+    "mass_pm4": 0.4422883987426758
+  },
+  {
+    "run": "lean_t192_s44",
+    "kind": "surface_relative",
+    "peak_r": 0.0,
+    "entropy": 0.841235563872505,
+    "entropy_init": 0.8441986464982045,
+    "mass_pm4": 0.44303926825523376
+  },
+  {
+    "run": "t256_lean_s42",
+    "kind": "surface_relative",
+    "peak_r": 0.0,
+    "entropy": 0.8379548398529417,
+    "entropy_init": 0.8441986464982045,
+    "mass_pm4": 0.45860937237739563
+  },
+  {
+    "run": "t256_lean_s43",
+    "kind": "surface_relative",
+    "peak_r": 0.0,
+    "entropy": 0.840437408391083,
+    "entropy_init": 0.8441986464982045,
+    "mass_pm4": 0.4446347653865814
+  },
+  {
+    "run": "t256_lean_s44",
+    "kind": "surface_relative",
+    "peak_r": 0.0,
+    "entropy": 0.8381849065879615,
+    "entropy_init": 0.8441986464982045,
+    "mass_pm4": 0.4598255753517151
+  },
+  {
+    "run": "t256_nosurf_s42",
+    "kind": "learned_abs",
+    "peak_d": 15,
+    "entropy": 0.9997868130538258
+  }
+]

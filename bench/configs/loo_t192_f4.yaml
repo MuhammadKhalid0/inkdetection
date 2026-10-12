@@ -1,0 +1,70 @@
+# LOO fold 4: holds out 20241108115232 (OOF map generator for r2).
+# Identical to a2bs_t192.yaml except manifest/run_name.
+data:
+  aug:
+    hflip: true
+    rot90: true
+    vflip: true
+    z_flip: true
+    z_flip_p: 0.5
+    z_shift: 2
+    z_shift_p: 0.3
+  center_layer: 32
+  depth: 32
+  label_file: ink_reg.npy
+  manifest_suffix: _reg_t192_loo4
+  n_layers: 65
+  normalize: 255.0
+  pos_thresh: 0.05
+  samples_per_epoch: 4000
+  tile: 192
+infer:
+  batch: 8
+  stride: 96
+model:
+  da_gamma_init: 0.1
+  depth_attn: true
+  depths:
+  - 3
+  - 3
+  - 3
+  - 3
+  dims:
+  - 32
+  - 64
+  - 128
+  - 256
+  feature_size: 16
+  name: unetrpp
+  num_heads: 4
+  patch_size:
+  - 1
+  - 4
+  - 4
+  pe_mode: 2d
+  per_pixel: true
+  surface_relative: true
+  warp_stabilize: true
+output:
+  dir: /home/woody/iwi5/iwi5401h/vesuvius/outputs
+  run_name: a2bs_t192_f4
+shared:
+  collapse: surface_relative
+  stem_out_extra: 8
+  texture_stem: true
+train:
+  amp: true
+  amp_dtype: bf16
+  batch: 4
+  epochs: 60
+  grad_clip: 1.0
+  loss: dice_bce
+  lr: 0.0001
+  num_workers: 8
+  patience: 20
+  seed: 42
+  select_on: sweep
+  sweep_every: 1
+  val_tau: 0.4
+  warmup_epochs: 3
+  weight_decay: 3.0e-05

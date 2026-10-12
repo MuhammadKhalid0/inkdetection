@@ -1,0 +1,16 @@
+{
+  "run": "s2_wordbox_t192_s44",
+  "select_on": "sweep",
+  "best_epoch": 24,
+  "best_f05": 0.7213730574062068,
+  "best_tau": 0.75,
+  "fixed_tau": 0.4,
+  "f05_at_fixed_tau": 0.6285927254440914,
+  "precision": 0.8267953317094731,
+  "recall": 0.4777217488794723,
+  "iou_ink": 0.4342618902502125,
+  "iou_bg": 0.888368483212411,
+  "miou": 0.6613151867313117,
+  "ema": false,
+  "label_file": "ink_reg.npy"
+}

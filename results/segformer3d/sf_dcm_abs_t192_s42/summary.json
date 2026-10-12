@@ -1,0 +1,16 @@
+{
+  "run": "sf_dcm_abs_t192_s42",
+  "select_on": "sweep",
+  "best_epoch": 32,
+  "best_f05": 0.786863860196111,
+  "best_tau": 0.8,
+  "fixed_tau": 0.4,
+  "f05_at_fixed_tau": 0.7501831157206363,
+  "precision": 0.8685802001309672,
+  "recall": 0.5717154397098656,
+  "iou_ink": 0.5261977911833897,
+  "iou_bg": 0.9060794718924488,
+  "miou": 0.7161386315379192,
+  "ema": false,
+  "label_file": "ink_reg.npy"
+}

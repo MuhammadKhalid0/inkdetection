@@ -1,0 +1,12 @@
+{
+  "run": "abl_loss_recall",
+  "select_on": "sweep",
+  "best_epoch": 49,
+  "best_f05": 0.7726757357391214,
+  "best_tau": 0.75,
+  "fixed_tau": 0.4,
+  "f05_at_fixed_tau": 0.7042108822760527,
+  "precision": 0.8692320426314966,
+  "recall": 0.5349722631588066,
+  "label_file": "ink_reg.npy"
+}

@@ -1,0 +1,62 @@
+# A1 — A0b + DA-EPA depth-attention branch (shared Q/K, gamma init 0.1).
+# The first rung where the DA-EPA contribution can show up: "does depth attention help?"
+# Still ABSOLUTE depth PE inside the depth branch (surface-relative frame is A2).
+# Collapse stays learned-absolute (from A0s). At gamma=0 the depth gate is identity => EPA.
+# Diff vs a0b.yaml: model.depth_attn true, model.da_gamma_init 0.1, run_name a1.
+
+model:
+  name: unetrpp
+  feature_size: 16
+  dims: [32, 64, 128, 256]
+  depths: [3, 3, 3, 3]
+  num_heads: 4
+  patch_size: [1, 4, 4]        # inherited from A0b (depth-preserving)
+  pe_mode: 2d                  # inherited from A0b
+  depth_attn: true             # A1: DA-EPA depth-attention gate ON
+  da_gamma_init: 0.1           # per-channel gate init (gamma=0 => EPA)
+
+shared:
+  texture_stem: true
+  stem_out_extra: 8
+  collapse: learned
+
+data:
+  tile: 64
+  depth: 32
+  center_layer: 32
+  n_layers: 65
+  normalize: 255.0
+  norm_mode: pertile_zscore    # per-tile z-score: fixes brightness domain shift (left-word)
+  pos_thresh: 0.05
+  samples_per_epoch: 4000
+  aug:
+    hflip: true
+    vflip: true
+    rot90: true
+    z_flip: true
+    z_flip_p: 0.5
+    z_shift: 2
+    z_shift_p: 0.3
+
+train:
+  loss: dice_bce
+  lr: 1.0e-4
+  weight_decay: 3.0e-5
+  epochs: 120
+  warmup_epochs: 3
+  batch: 16
+  num_workers: 8
+  amp: true
+  grad_clip: 1.0
+  val_tau: 0.4
+  sweep_every: 5
+  patience: 20
+  seed: 42
+
+infer:
+  stride: 32
+  batch: 32
+
+output:
+  dir: /home/woody/iwi5/iwi5401h/vesuvius/outputs
+  run_name: a1_pn

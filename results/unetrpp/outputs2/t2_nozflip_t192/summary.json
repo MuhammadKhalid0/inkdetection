@@ -1,0 +1,16 @@
+{
+  "run": "t2_nozflip_t192",
+  "select_on": "sweep",
+  "best_epoch": 53,
+  "best_f05": 0.7843440617854267,
+  "best_tau": 0.85,
+  "fixed_tau": 0.4,
+  "f05_at_fixed_tau": 0.6916862947098119,
+  "precision": 0.8920993215111821,
+  "recall": 0.5288355768848442,
+  "iou_ink": 0.49704300947093244,
+  "iou_bg": 0.903126336415673,
+  "miou": 0.7000846729433027,
+  "ema": false,
+  "label_file": "ink_reg.npy"
+}

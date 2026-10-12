@@ -1,0 +1,10 @@
+{
+  "run": "t256_lean_s43",
+  "seg": "20251115002740-auto_grown_20251115002740308_0_flatboi",
+  "ckpt": "/home/woody/iwi5/iwi5401h/vesuvius/outputs4/t256_lean_s43/best.pt",
+  "epoch": 46,
+  "shape": [
+    11140,
+    49240
+  ]
+}

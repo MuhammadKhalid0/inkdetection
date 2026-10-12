@@ -1,0 +1,18 @@
+{
+  "run": "abl_warpstab",
+  "label_file": "ink_reg.npy",
+  "baseline": {
+    "f05": 0.7730951737273041,
+    "precision": 0.8491583642597466,
+    "recall": 0.5691641238058277,
+    "tau": 0.75
+  },
+  "postprocessed": {
+    "tau": 0.75,
+    "min_size": 20000,
+    "f05": 0.7857408637607549,
+    "precision": 0.8930807362466052,
+    "recall": 0.5306327009790119
+  },
+  "note": "tau+min_size selected on the VALIDATION segment (the designated selection set); component filter is label-free at inference time."
+}

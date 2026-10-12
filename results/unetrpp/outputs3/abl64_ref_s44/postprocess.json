@@ -1,0 +1,18 @@
+{
+  "run": "abl64_ref_s44",
+  "label_file": "ink_reg.npy",
+  "baseline": {
+    "f05": 0.6474221045908651,
+    "precision": 0.7525470596120335,
+    "recall": 0.4153419693368608,
+    "tau": 0.75
+  },
+  "postprocessed": {
+    "tau": 0.75,
+    "min_size": 5000,
+    "f05": 0.6658349997463358,
+    "precision": 0.8155216010804132,
+    "recall": 0.3839461987295419
+  },
+  "note": "tau+min_size selected on the VALIDATION segment (the designated selection set); component filter is label-free at inference time."
+}

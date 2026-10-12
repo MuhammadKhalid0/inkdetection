@@ -1,0 +1,12 @@
+{
+  "run": "lean_t192_s42",
+  "select_on": "sweep",
+  "best_epoch": 59,
+  "best_f05": 0.7783604122914904,
+  "best_tau": 0.75,
+  "fixed_tau": 0.4,
+  "f05_at_fixed_tau": 0.7029560194142201,
+  "precision": 0.8789921967495938,
+  "recall": 0.5338764867174929,
+  "label_file": "ink_reg.npy"
+}

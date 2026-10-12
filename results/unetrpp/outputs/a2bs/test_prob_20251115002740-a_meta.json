@@ -1,0 +1,10 @@
+{
+  "run": "a2bs",
+  "seg": "20251115002740-auto_grown_20251115002740308_0_flatboi",
+  "ckpt": "/home/woody/iwi5/iwi5401h/vesuvius/outputs/a2bs/best.pt",
+  "epoch": 44,
+  "shape": [
+    11140,
+    49240
+  ]
+}

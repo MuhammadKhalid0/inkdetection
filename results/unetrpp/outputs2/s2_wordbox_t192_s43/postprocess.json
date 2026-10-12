@@ -1,0 +1,18 @@
+{
+  "run": "s2_wordbox_t192_s43",
+  "label_file": "ink_reg.npy",
+  "baseline": {
+    "f05": 0.60052790398158,
+    "precision": 0.6840551787805679,
+    "recall": 0.4034655620969576,
+    "tau": 0.7
+  },
+  "postprocessed": {
+    "tau": 0.65,
+    "min_size": 20000,
+    "f05": 0.6223629897513572,
+    "precision": 0.7261487605356024,
+    "recall": 0.39597944742767327
+  },
+  "note": "tau+min_size selected on the VALIDATION segment (the designated selection set); component filter is label-free at inference time."
+}

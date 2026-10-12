@@ -1,0 +1,71 @@
+# A2bs_reg — BEST architecture (a2bs: per-pixel surface-relative collapse, stabilized)
+# retrained on REGISTERED labels with the FIXED training loop (2026-07-03).
+# Rationale: a2bs was the best rescored run (0.634) but was trained/selected on the
+# misregistered original labels; a1_reg proved reg-label retraining adds ~+0.01.
+# Loop fixes vs all prior runs:
+#   * select_on sweep — checkpoint + early-stop keyed on swept F0.5 (models calibrate
+#     at tau 0.45-0.75; the old fixed tau0.4 selection lost >=0.01-0.05 per run);
+#   * epochs 60 — the cosine schedule actually completes inside the patience budget
+#     (old runs died at e36-99 with LR still 4-8e-5, val noise +-0.10-0.26/epoch).
+
+model:
+  name: unetrpp
+  feature_size: 16
+  dims: [32, 64, 128, 256]
+  depths: [3, 3, 3, 3]
+  num_heads: 4
+  patch_size: [1, 4, 4]
+  pe_mode: 2d
+  depth_attn: true
+  da_gamma_init: 0.1
+  surface_relative: true
+  per_pixel: true
+  warp_stabilize: true
+
+shared:
+  texture_stem: true
+  stem_out_extra: 8
+  collapse: surface_relative
+
+data:
+  tile: 64
+  depth: 32
+  center_layer: 32
+  n_layers: 65
+  normalize: 255.0
+  label_file: ink_reg.npy
+  manifest_suffix: _reg
+  pos_thresh: 0.05
+  samples_per_epoch: 4000
+  aug:
+    hflip: true
+    vflip: true
+    rot90: true
+    z_flip: true
+    z_flip_p: 0.5
+    z_shift: 2
+    z_shift_p: 0.3
+
+train:
+  loss: dice_bce
+  lr: 1.0e-4
+  weight_decay: 3.0e-5
+  epochs: 60
+  warmup_epochs: 3
+  batch: 16
+  num_workers: 8
+  amp: true
+  grad_clip: 1.0
+  val_tau: 0.4
+  select_on: sweep
+  sweep_every: 1
+  patience: 20
+  seed: 42
+
+infer:
+  stride: 32
+  batch: 32
+
+output:
+  dir: /home/woody/iwi5/iwi5401h/vesuvius/outputs
+  run_name: a2bs_reg

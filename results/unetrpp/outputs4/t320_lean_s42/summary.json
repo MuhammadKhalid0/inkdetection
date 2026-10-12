@@ -1,0 +1,16 @@
+{
+  "run": "t320_lean_s42",
+  "select_on": "sweep",
+  "best_epoch": 27,
+  "best_f05": 0.7999874450756879,
+  "best_tau": 0.7,
+  "fixed_tau": 0.4,
+  "f05_at_fixed_tau": 0.7468735972617003,
+  "precision": 0.8690576201427873,
+  "recall": 0.6070132228763367,
+  "iou_ink": 0.5561480818145651,
+  "iou_bg": 0.911042162539643,
+  "miou": 0.733595122177104,
+  "ema": false,
+  "label_file": "ink_reg.npy"
+}

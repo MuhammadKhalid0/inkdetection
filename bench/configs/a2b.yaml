@@ -1,0 +1,69 @@
+# A2b — A2 + per-pixel surface field (deformable z-sampling).
+# Replaces A2's per-tile SCALAR surface centre s_hat with a per-pixel field s_hat(w,d):
+#   * EPA depth branch: a small (zero-init) head predicts each within-layer pixel's own
+#     surface depth; the canonical depth gate is WARPED along the depth axis by each
+#     pixel's deviation from the tile centre (spatial-transformer z-sampling).
+#   * Collapse: the surface-relative readout is computed per pixel s_hat(h,w).
+# Targets DA-EPA's one structural weakness — the spatially-uniform-per-tile gate — which
+# cannot track a WARP within a tile (ink on higher layers in some areas, lower in others).
+# The single change most likely to move CROSS-SCROLL F0.5 (methodology Tier-2 swing).
+# Zero-init per-pixel head -> A2b STARTS as A2 and learns per-pixel deviations.
+# Diff vs a2.yaml: model.per_pixel true, run_name a2b.
+
+model:
+  name: unetrpp
+  feature_size: 16
+  dims: [32, 64, 128, 256]
+  depths: [3, 3, 3, 3]
+  num_heads: 4
+  patch_size: [1, 4, 4]
+  pe_mode: 2d
+  depth_attn: true
+  da_gamma_init: 0.1
+  surface_relative: true       # A2: relative depth PE (r_d = d - s_hat)
+  per_pixel: true              # A2b: per-pixel surface field s_hat(w,d) + z-sampling
+
+shared:
+  texture_stem: true
+  stem_out_extra: 8
+  collapse: surface_relative    # collapse re-indexed to the (per-pixel) surface frame
+
+data:
+  tile: 64
+  depth: 32
+  center_layer: 32
+  n_layers: 65
+  normalize: 255.0
+  pos_thresh: 0.05
+  samples_per_epoch: 4000
+  aug:
+    hflip: true
+    vflip: true
+    rot90: true
+    z_flip: true
+    z_flip_p: 0.5
+    z_shift: 2
+    z_shift_p: 0.3
+
+train:
+  loss: dice_bce
+  lr: 1.0e-4
+  weight_decay: 3.0e-5
+  epochs: 120
+  warmup_epochs: 3
+  batch: 16
+  num_workers: 8
+  amp: true
+  grad_clip: 1.0
+  val_tau: 0.4
+  sweep_every: 5
+  patience: 20
+  seed: 42
+
+infer:
+  stride: 32
+  batch: 32
+
+output:
+  dir: /home/woody/iwi5/iwi5401h/vesuvius/outputs
+  run_name: a2b

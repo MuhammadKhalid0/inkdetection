@@ -1,0 +1,16 @@
+{
+  "run": "g3_zshift6_t192",
+  "select_on": "sweep",
+  "best_epoch": 43,
+  "best_f05": 0.7616422243666454,
+  "best_tau": 0.65,
+  "fixed_tau": 0.4,
+  "f05_at_fixed_tau": 0.7121571350132943,
+  "precision": 0.8598891508285273,
+  "recall": 0.5227394749235229,
+  "iou_ink": 0.4817096259959203,
+  "iou_bg": 0.8982950042075942,
+  "miou": 0.6900023151017572,
+  "ema": false,
+  "label_file": "ink_reg.npy"
+}

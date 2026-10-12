@@ -1,0 +1,12 @@
+{
+  "run": "abl_perpix",
+  "select_on": "sweep",
+  "best_epoch": 45,
+  "best_f05": 0.7730668150105593,
+  "best_tau": 0.8,
+  "fixed_tau": 0.4,
+  "f05_at_fixed_tau": 0.6725625568891076,
+  "precision": 0.8661634753254366,
+  "recall": 0.5406341975255178,
+  "label_file": "ink_reg.npy"
+}

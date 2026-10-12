@@ -1,0 +1,12 @@
+{
+  "run": "abl_surfrel",
+  "select_on": "sweep",
+  "best_epoch": 49,
+  "best_f05": 0.7642291261372932,
+  "best_tau": 0.75,
+  "fixed_tau": 0.4,
+  "f05_at_fixed_tau": 0.6714241303973646,
+  "precision": 0.8590541822652593,
+  "recall": 0.5301507622663747,
+  "label_file": "ink_reg.npy"
+}

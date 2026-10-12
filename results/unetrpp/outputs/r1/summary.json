@@ -1,0 +1,11 @@
+{
+  "run": "r1",
+  "first_stage": "a2bs_t128",
+  "baseline_f05": 0.718546634342668,
+  "baseline_tau": 0.75,
+  "best_f05": 0.7461937351644168,
+  "best_tau": 0.75,
+  "precision": 0.8572056261689547,
+  "recall": 0.4915580402173628,
+  "best_epoch": 35
+}

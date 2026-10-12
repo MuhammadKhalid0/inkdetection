@@ -1,0 +1,10 @@
+{
+  "run": "t1_ema_t192",
+  "seg": "20251115002740-auto_grown_20251115002740308_0_flatboi",
+  "ckpt": "/home/woody/iwi5/iwi5401h/vesuvius/outputs2/t1_ema_t192/best.pt",
+  "epoch": 53,
+  "shape": [
+    11140,
+    49240
+  ]
+}

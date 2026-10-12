@@ -1,0 +1,12 @@
+{
+  "run": "r2",
+  "first_stage": "a2bs_t192_loo",
+  "val_from": "a2bs_t192",
+  "baseline_f05": 0.773491146840515,
+  "baseline_tau": 0.75,
+  "best_f05": 0.7720109219352635,
+  "best_tau": 0.75,
+  "precision": 0.8372056248737362,
+  "recall": 0.5886530489387625,
+  "best_epoch": 26
+}

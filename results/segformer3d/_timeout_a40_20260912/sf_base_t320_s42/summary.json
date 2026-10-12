@@ -1,0 +1,16 @@
+{
+  "run": "sf_base_t320_s42",
+  "select_on": "sweep",
+  "best_epoch": 33,
+  "best_f05": 0.8091205877317943,
+  "best_tau": 0.8,
+  "fixed_tau": 0.4,
+  "f05_at_fixed_tau": 0.7606874191951268,
+  "precision": 0.8791680674559015,
+  "recall": 0.613575198926519,
+  "iou_ink": 0.5658569734284097,
+  "iou_bg": 0.9134522094716008,
+  "miou": 0.7396545914500052,
+  "ema": false,
+  "label_file": "ink_reg.npy"
+}

@@ -1,0 +1,54 @@
+# A0 — vanilla UNETR++ baseline (pure published-style; mean depth collapse, no texture stem)
+# Data: Scroll 5 (PHerc.0172). Train=8 segs, Val=20241113090990, Test=flatboi (qualitative).
+
+model:
+  name: unetrpp
+  feature_size: 16
+  dims: [32, 64, 128, 256]
+  depths: [3, 3, 3, 3]
+  num_heads: 4
+  patch_size: [2, 4, 4]        # medical default == paper (4,4,2): depth/2, H/4, W/4
+
+shared:
+  texture_stem: false          # A0: OFF
+  collapse: mean               # A0: mean depth collapse (not learned)
+
+data:
+  tile: 64
+  depth: 32                    # D=32 layers
+  center_layer: 32             # centered on surface (~layer 32 of 65)
+  n_layers: 65
+  normalize: 255.0
+  pos_thresh: 0.05             # ink-aware sampler positive threshold
+  samples_per_epoch: 4000
+  aug:
+    hflip: true
+    vflip: true
+    rot90: true
+    z_flip: true
+    z_flip_p: 0.5
+    z_shift: 2
+    z_shift_p: 0.3
+
+train:
+  loss: dice_bce
+  lr: 1.0e-4
+  weight_decay: 3.0e-5
+  epochs: 120
+  warmup_epochs: 3
+  batch: 16
+  num_workers: 8
+  amp: true
+  grad_clip: 1.0
+  val_tau: 0.4
+  sweep_every: 5
+  patience: 20
+  seed: 42
+
+infer:
+  stride: 32
+  batch: 32
+
+output:
+  dir: /home/woody/iwi5/iwi5401h/vesuvius/outputs
+  run_name: a0

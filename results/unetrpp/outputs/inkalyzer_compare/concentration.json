@@ -1,0 +1,122 @@
+{
+  "a0": {
+    "peak_idx": 15,
+    "mass_within_pm2": 0.4618906554429208,
+    "norm_entropy": 0.8519206129842305,
+    "peak_layer_abs": 31,
+    "tile": 64,
+    "f05": 0.41600670995323014
+  },
+  "a0s": {
+    "peak_idx": 14,
+    "mass_within_pm2": 0.4076076033880388,
+    "norm_entropy": 0.829761316743262,
+    "peak_layer_abs": 30,
+    "tile": 64,
+    "f05": 0.5115524450451415
+  },
+  "a0b": {
+    "peak_idx": 20,
+    "mass_within_pm2": 0.35588996782862053,
+    "norm_entropy": 0.8288316515195183,
+    "peak_layer_abs": 36,
+    "tile": 64,
+    "f05": 0.5057244367813489
+  },
+  "a1": {
+    "peak_idx": 13,
+    "mass_within_pm2": 0.4319555665525319,
+    "norm_entropy": 0.8261363593932615,
+    "peak_layer_abs": 29,
+    "tile": 64,
+    "f05": 0.5575452240316443
+  },
+  "a2": {
+    "peak_idx": 14,
+    "mass_within_pm2": 0.3990423398441079,
+    "norm_entropy": 0.8330045922162623,
+    "peak_layer_abs": 30,
+    "tile": 64,
+    "f05": 0.5419220175449924
+  },
+  "a2b": {
+    "peak_idx": 14,
+    "mass_within_pm2": 0.4228526258598911,
+    "norm_entropy": 0.8679225136409792,
+    "peak_layer_abs": 30,
+    "tile": 64,
+    "f05": 0.5171688010063858
+  },
+  "a2bs": {
+    "peak_idx": 16,
+    "mass_within_pm2": 0.4563184821340567,
+    "norm_entropy": 0.8344396486720136,
+    "peak_layer_abs": 32,
+    "tile": 64,
+    "f05": 0.5461259804352743
+  },
+  "a1_reg": {
+    "peak_idx": 14,
+    "mass_within_pm2": 0.4425083000692357,
+    "norm_entropy": 0.8275188766368634,
+    "peak_layer_abs": 30,
+    "tile": 64,
+    "f05": 0.5929217673619336
+  },
+  "a2bs_reg": {
+    "peak_idx": 14,
+    "mass_within_pm2": 0.44946120314703053,
+    "norm_entropy": 0.8429357492538705,
+    "peak_layer_abs": 30,
+    "tile": 64,
+    "f05": 0.6387244547276629
+  },
+  "a2bs_t128": {
+    "peak_idx": 16,
+    "mass_within_pm2": 0.4332473559870206,
+    "norm_entropy": 0.8747840693912032,
+    "peak_layer_abs": 32,
+    "tile": 128,
+    "f05": 0.7185465300025472
+  },
+  "a2bs_t192": {
+    "peak_idx": 16,
+    "mass_within_pm2": 0.396758673437488,
+    "norm_entropy": 0.8991812759599614,
+    "peak_layer_abs": 32,
+    "tile": 192,
+    "f05": 0.7734910472581111
+  },
+  "abl_surfrel": {
+    "peak_idx": 16,
+    "mass_within_pm2": 0.4299122415229343,
+    "norm_entropy": 0.899181970150398,
+    "peak_layer_abs": 32,
+    "tile": 192,
+    "f05": 0.7642291261372932
+  },
+  "abl_da": {
+    "peak_idx": 15,
+    "mass_within_pm2": 0.3868261341892959,
+    "norm_entropy": 0.9065162576726584,
+    "peak_layer_abs": 31,
+    "tile": 192,
+    "f05": 0.7877035730735475
+  },
+  "abl_labels": {
+    "peak_idx": 18,
+    "mass_within_pm2": 0.34408473018322594,
+    "norm_entropy": 0.9107881850203352,
+    "peak_layer_abs": 34,
+    "tile": 192,
+    "f05": 0.6995836892645425
+  },
+  "a2bs_t192_s44": {
+    "peak_idx": 16,
+    "mass_within_pm2": 0.40138304618372506,
+    "norm_entropy": 0.9062160312324508,
+    "peak_layer_abs": 32,
+    "tile": 192,
+    "f05": 0.7818981001769003
+  }
+}

@@ -1,0 +1,467 @@
+{
+ "crop_x": [
+  1434,
+  5300
+ ],
+ "fp_total_px": 68351,
+ "explained_by_reg2_px": 18206,
+ "remaining_px": 50145,
+ "n_boundary_slivers": 20,
+ "n_separate_blobs": 10,
+ "blobs": [
+  {
+   "x": 1797,
+   "y": 212,
+   "area_px": 9009,
+   "min_dist_to_label_px": 458.9,
+   "kind": "separate_blob",
+   "contrast": -0.4,
+   "ink_like (contrast>=3.0)": false,
+   "median_width_px": 22.8,
+   "prob_per_model": {
+    "unetrpp_c1_t256": 0.902,
+    "unetrpp_t256_lean": 0.713,
+    "nnformer_n_base_reg2": 0.796
+   }
+  },
+  {
+   "x": 2406,
+   "y": 260,
+   "area_px": 6085,
+   "min_dist_to_label_px": 382.2,
+   "kind": "separate_blob",
+   "contrast": 3.98,
+   "ink_like (contrast>=3.0)": true,
+   "median_width_px": 18.9,
+   "prob_per_model": {
+    "unetrpp_c1_t256": 0.115,
+    "unetrpp_t256_lean": 0.736,
+    "nnformer_n_base_reg2": 0.864
+   }
+  },
+  {
+   "x": 3700,
+   "y": 152,
+   "area_px": 4554,
+   "min_dist_to_label_px": 353.0,
+   "kind": "separate_blob",
+   "contrast": -6.25,
+   "ink_like (contrast>=3.0)": false,
+   "median_width_px": 11.3,
+   "prob_per_model": {
+    "unetrpp_c1_t256": 0.608,
+    "unetrpp_t256_lean": 0.742,
+    "nnformer_n_base_reg2": 0.833
+   }
+  },
+  {
+   "x": 2772,
+   "y": 213,
+   "area_px": 3361,
+   "min_dist_to_label_px": 420.4,
+   "kind": "separate_blob",
+   "contrast": 1.86,
+   "ink_like (contrast>=3.0)": false,
+   "median_width_px": 12.2,
+   "prob_per_model": {
+    "unetrpp_c1_t256": 0.687,
+    "unetrpp_t256_lean": 0.768,
+    "nnformer_n_base_reg2": 0.732
+   }
+  },
+  {
+   "x": 2173,
+   "y": 168,
+   "area_px": 2914,
+   "min_dist_to_label_px": 471.7,
+   "kind": "separate_blob",
+   "contrast": 3.1,
+   "ink_like (contrast>=3.0)": true,
+   "median_width_px": 12.6,
+   "prob_per_model": {
+    "unetrpp_c1_t256": 0.746,
+    "unetrpp_t256_lean": 0.167,
+    "nnformer_n_base_reg2": 0.948
+   }
+  },
+  {
+   "x": 2087,
+   "y": 887,
+   "area_px": 2555,
+   "min_dist_to_label_px": 1.0,
+   "kind": "boundary_sliver",
+   "contrast": 1.87,
+   "ink_like (contrast>=3.0)": false,
+   "median_width_px": 8.0,
+   "prob_per_model": {
+    "unetrpp_c1_t256": 0.917,
+    "unetrpp_t256_lean": 0.845,
+    "nnformer_n_base_reg2": 0.535
+   }
+  },
+  {
+   "x": 4999,
+   "y": 593,
+   "area_px": 2118,
+   "min_dist_to_label_px": 1.0,
+   "kind": "boundary_sliver",
+   "contrast": 7.09,
+   "ink_like (contrast>=3.0)": true,
+   "median_width_px": 4.5,
+   "prob_per_model": {
+    "unetrpp_c1_t256": 0.649,
+    "unetrpp_t256_lean": 0.773,
+    "nnformer_n_base_reg2": 0.831
+   }
+  },
+  {
+   "x": 2512,
+   "y": 952,
+   "area_px": 2003,
+   "min_dist_to_label_px": 1.0,
+   "kind": "boundary_sliver",
+   "contrast": -1.56,
+   "ink_like (contrast>=3.0)": false,
+   "median_width_px": 11.7,
+   "prob_per_model": {
+    "unetrpp_c1_t256": 0.881,
+    "unetrpp_t256_lean": 0.776,
+    "nnformer_n_base_reg2": 0.005
+   }
+  },
+  {
+   "x": 2308,
+   "y": 264,
+   "area_px": 1974,
+   "min_dist_to_label_px": 431.1,
+   "kind": "separate_blob",
+   "contrast": -1.67,
+   "ink_like (contrast>=3.0)": false,
+   "median_width_px": 12.0,
+   "prob_per_model": {
+    "unetrpp_c1_t256": 0.73,
+    "unetrpp_t256_lean": 0.563,
+    "nnformer_n_base_reg2": 0.889
+   }
+  },
+  {
+   "x": 4543,
+   "y": 630,
+   "area_px": 1841,
+   "min_dist_to_label_px": 1.0,
+   "kind": "boundary_sliver",
+   "contrast": 7.19,
+   "ink_like (contrast>=3.0)": true,
+   "median_width_px": 8.0,
+   "prob_per_model": {
+    "unetrpp_c1_t256": 0.908,
+    "unetrpp_t256_lean": 0.854,
+    "nnformer_n_base_reg2": 0.808
+   }
+  },
+  {
+   "x": 3379,
+   "y": 581,
+   "area_px": 1803,
+   "min_dist_to_label_px": 1.0,
+   "kind": "boundary_sliver",
+   "contrast": 8.98,
+   "ink_like (contrast>=3.0)": true,
+   "median_width_px": 10.0,
+   "prob_per_model": {
+    "unetrpp_c1_t256": 0.833,
+    "unetrpp_t256_lean": 0.792,
+    "nnformer_n_base_reg2": 0.068
+   }
+  },
+  {
+   "x": 2731,
+   "y": 1099,
+   "area_px": 1594,
+   "min_dist_to_label_px": 8.9,
+   "kind": "separate_blob",
+   "contrast": 1.36,
+   "ink_like (contrast>=3.0)": false,
+   "median_width_px": 10.0,
+   "prob_per_model": {
+    "unetrpp_c1_t256": 0.856,
+    "unetrpp_t256_lean": 0.848,
+    "nnformer_n_base_reg2": 0.625
+   }
+  },
+  {
+   "x": 3125,
+   "y": 870,
+   "area_px": 1537,
+   "min_dist_to_label_px": 1.0,
+   "kind": "boundary_sliver",
+   "contrast": 1.38,
+   "ink_like (contrast>=3.0)": false,
+   "median_width_px": 4.5,
+   "prob_per_model": {
+    "unetrpp_c1_t256": 0.867,
+    "unetrpp_t256_lean": 0.814,
+    "nnformer_n_base_reg2": 0.738
+   }
+  },
+  {
+   "x": 4819,
+   "y": 871,
+   "area_px": 1442,
+   "min_dist_to_label_px": 3.2,
+   "kind": "boundary_sliver",
+   "contrast": 6.28,
+   "ink_like (contrast>=3.0)": true,
+   "median_width_px": 8.0,
+   "prob_per_model": {
+    "unetrpp_c1_t256": 0.752,
+    "unetrpp_t256_lean": 0.765,
+    "nnformer_n_base_reg2": 0.839
+   }
+  },
+  {
+   "x": 3436,
+   "y": 755,
+   "area_px": 1046,
+   "min_dist_to_label_px": 1.0,
+   "kind": "boundary_sliver",
+   "contrast": 3.32,
+   "ink_like (contrast>=3.0)": true,
+   "median_width_px": 4.5,
+   "prob_per_model": {
+    "unetrpp_c1_t256": 0.797,
+    "unetrpp_t256_lean": 0.862,
+    "nnformer_n_base_reg2": 0.614
+   }
+  },
+  {
+   "x": 4639,
+   "y": 790,
+   "area_px": 994,
+   "min_dist_to_label_px": 1.0,
+   "kind": "boundary_sliver",
+   "contrast": 2.55,
+   "ink_like (contrast>=3.0)": false,
+   "median_width_px": 6.0,
+   "prob_per_model": {
+    "unetrpp_c1_t256": 0.887,
+    "unetrpp_t256_lean": 0.848,
+    "nnformer_n_base_reg2": 0.652
+   }
+  },
+  {
+   "x": 3776,
+   "y": 564,
+   "area_px": 676,
+   "min_dist_to_label_px": 1.0,
+   "kind": "boundary_sliver",
+   "contrast": -4.5,
+   "ink_like (contrast>=3.0)": false,
+   "median_width_px": 5.7,
+   "prob_per_model": {
+    "unetrpp_c1_t256": 0.762,
+    "unetrpp_t256_lean": 0.681,
+    "nnformer_n_base_reg2": 0.773
+   }
+  },
+  {
+   "x": 4378,
+   "y": 705,
+   "area_px": 665,
+   "min_dist_to_label_px": 4.5,
+   "kind": "boundary_sliver",
+   "contrast": -4.84,
+   "ink_like (contrast>=3.0)": false,
+   "median_width_px": 2.8,
+   "prob_per_model": {
+    "unetrpp_c1_t256": 0.834,
+    "unetrpp_t256_lean": 0.783,
+    "nnformer_n_base_reg2": 0.411
+   }
+  },
+  {
+   "x": 5237,
+   "y": 614,
+   "area_px": 437,
+   "min_dist_to_label_px": 1.0,
+   "kind": "boundary_sliver",
+   "contrast": 5.54,
+   "ink_like (contrast>=3.0)": true,
+   "median_width_px": 4.0,
+   "prob_per_model": {
+    "unetrpp_c1_t256": 0.671,
+    "unetrpp_t256_lean": 0.726,
+    "nnformer_n_base_reg2": 0.875
+   }
+  },
+  {
+   "x": 4023,
+   "y": 920,
+   "area_px": 349,
+   "min_dist_to_label_px": 2.2,
+   "kind": "boundary_sliver",
+   "contrast": -4.82,
+   "ink_like (contrast>=3.0)": false,
+   "median_width_px": 4.0,
+   "prob_per_model": {
+    "unetrpp_c1_t256": 0.871,
+    "unetrpp_t256_lean": 0.804,
+    "nnformer_n_base_reg2": 0.767
+   }
+  },
+  {
+   "x": 3403,
+   "y": 1009,
+   "area_px": 294,
+   "min_dist_to_label_px": 12.1,
+   "kind": "separate_blob",
+   "contrast": -6.31,
+   "ink_like (contrast>=3.0)": false,
+   "median_width_px": 4.0,
+   "prob_per_model": {
+    "unetrpp_c1_t256": 0.845,
+    "unetrpp_t256_lean": 0.756,
+    "nnformer_n_base_reg2": 0.068
+   }
+  },
+  {
+   "x": 4323,
+   "y": 805,
+   "area_px": 264,
+   "min_dist_to_label_px": 1.0,
+   "kind": "boundary_sliver",
+   "contrast": 4.36,
+   "ink_like (contrast>=3.0)": true,
+   "median_width_px": 2.8,
+   "prob_per_model": {
+    "unetrpp_c1_t256": 0.769,
+    "unetrpp_t256_lean": 0.73,
+    "nnformer_n_base_reg2": 0.166
+   }
+  },
+  {
+   "x": 2158,
+   "y": 1114,
+   "area_px": 232,
+   "min_dist_to_label_px": 16.0,
+   "kind": "separate_blob",
+   "contrast": -2.27,
+   "ink_like (contrast>=3.0)": false,
+   "median_width_px": 4.0,
+   "prob_per_model": {
+    "unetrpp_c1_t256": 0.853,
+    "unetrpp_t256_lean": 0.667,
+    "nnformer_n_base_reg2": 0.779
+   }
+  },
+  {
+   "x": 5254,
+   "y": 692,
+   "area_px": 210,
+   "min_dist_to_label_px": 1.0,
+   "kind": "boundary_sliver",
+   "contrast": 2.79,
+   "ink_like (contrast>=3.0)": false,
+   "median_width_px": 4.0,
+   "prob_per_model": {
+    "unetrpp_c1_t256": 0.773,
+    "unetrpp_t256_lean": 0.735,
+    "nnformer_n_base_reg2": 0.711
+   }
+  },
+  {
+   "x": 5277,
+   "y": 790,
+   "area_px": 210,
+   "min_dist_to_label_px": 1.0,
+   "kind": "boundary_sliver",
+   "contrast": 2.72,
+   "ink_like (contrast>=3.0)": false,
+   "median_width_px": 2.8,
+   "prob_per_model": {
+    "unetrpp_c1_t256": 0.897,
+    "unetrpp_t256_lean": 0.714,
+    "nnformer_n_base_reg2": 0.749
+   }
+  },
+  {
+   "x": 4923,
+   "y": 741,
+   "area_px": 201,
+   "min_dist_to_label_px": 2.8,
+   "kind": "boundary_sliver",
+   "contrast": -2.17,
+   "ink_like (contrast>=3.0)": false,
+   "median_width_px": 2.0,
+   "prob_per_model": {
+    "unetrpp_c1_t256": 0.738,
+    "unetrpp_t256_lean": 0.758,
+    "nnformer_n_base_reg2": 0.772
+   }
+  },
+  {
+   "x": 4326,
+   "y": 254,
+   "area_px": 193,
+   "min_dist_to_label_px": 267.9,
+   "kind": "separate_blob",
+   "contrast": -3.6,
+   "ink_like (contrast>=3.0)": false,
+   "median_width_px": 2.8,
+   "prob_per_model": {
+    "unetrpp_c1_t256": 0.403,
+    "unetrpp_t256_lean": 0.686,
+    "nnformer_n_base_reg2": 0.811
+   }
+  },
+  {
+   "x": 3017,
+   "y": 957,
+   "area_px": 182,
+   "min_dist_to_label_px": 1.0,
+   "kind": "boundary_sliver",
+   "contrast": -6.01,
+   "ink_like (contrast>=3.0)": false,
+   "median_width_px": 2.0,
+   "prob_per_model": {
+    "unetrpp_c1_t256": 0.816,
+    "unetrpp_t256_lean": 0.679,
+    "nnformer_n_base_reg2": 0.822
+   }
+  },
+  {
+   "x": 5119,
+   "y": 594,
+   "area_px": 172,
+   "min_dist_to_label_px": 3.0,
+   "kind": "boundary_sliver",
+   "contrast": 8.39,
+   "ink_like (contrast>=3.0)": true,
+   "median_width_px": 4.0,
+   "prob_per_model": {
+    "unetrpp_c1_t256": 0.765,
+    "unetrpp_t256_lean": 0.791,
+    "nnformer_n_base_reg2": 0.729
+   }
+  },
+  {
+   "x": 3117,
+   "y": 729,
+   "area_px": 163,
+   "min_dist_to_label_px": 1.0,
+   "kind": "boundary_sliver",
+   "contrast": -2.11,
+   "ink_like (contrast>=3.0)": false,
+   "median_width_px": 2.0,
+   "prob_per_model": {
+    "unetrpp_c1_t256": 0.803,
+    "unetrpp_t256_lean": 0.769,
+    "nnformer_n_base_reg2": 0.747
+   }
+  }
+ ],
+ "reference_real_ink_contrast": {
+  "mean": 3.9082508087158203,
+  "median": 3.869029998779297
+ }
+}

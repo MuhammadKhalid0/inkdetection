@@ -1,0 +1,63 @@
+# A0b — A0s + depth-preserving embed (1,4,4) + 2D positional encoding.
+# Isolates the embed/PE change ALONE (still vanilla EPA, no depth-attention yet).
+# Diff vs a0s.yaml: model.patch_size [2,4,4]->[1,4,4], model.pe_mode 3d->2d, run_name a0b.
+#
+# Depth-preserving embed keeps all 32 z-slices into stage 1 (medical default halves
+# depth before any attention). Token counts grow: stage_res [(32,16,16),(16,8,8),
+# (8,4,4),(4,2,2)], input_size [8192,1024,128,16]. Because depth is now real, the
+# absolute-depth 3D PE is replaced by a spatial-only 2D PE (shared across depth) so
+# it stays coherent with the later surface-relative frame (A2).
+
+model:
+  name: unetrpp
+  feature_size: 16
+  dims: [32, 64, 128, 256]
+  depths: [3, 3, 3, 3]
+  num_heads: 4
+  patch_size: [1, 4, 4]        # A0b: depth-preserving (was [2,4,4])
+  pe_mode: 2d                  # A0b: spatial-only PE broadcast across depth (was 3d)
+
+shared:
+  texture_stem: true           # inherited from A0s
+  stem_out_extra: 8
+  collapse: learned            # inherited from A0s
+
+data:
+  tile: 64
+  depth: 32
+  center_layer: 32
+  n_layers: 65
+  normalize: 255.0
+  pos_thresh: 0.05
+  samples_per_epoch: 4000
+  aug:
+    hflip: true
+    vflip: true
+    rot90: true
+    z_flip: true
+    z_flip_p: 0.5
+    z_shift: 2
+    z_shift_p: 0.3
+
+train:
+  loss: dice_bce
+  lr: 1.0e-4
+  weight_decay: 3.0e-5
+  epochs: 120
+  warmup_epochs: 3
+  batch: 16
+  num_workers: 8
+  amp: true
+  grad_clip: 1.0
+  val_tau: 0.4
+  sweep_every: 5
+  patience: 20
+  seed: 42
+
+infer:
+  stride: 32
+  batch: 32
+
+output:
+  dir: /home/woody/iwi5/iwi5401h/vesuvius/outputs
+  run_name: a0b

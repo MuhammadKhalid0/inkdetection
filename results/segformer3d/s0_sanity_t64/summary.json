@@ -1,0 +1,16 @@
+{
+  "run": "s0_sanity_t64",
+  "select_on": "sweep",
+  "best_epoch": 1,
+  "best_f05": 0.2597540057205767,
+  "best_tau": 0.35,
+  "fixed_tau": 0.4,
+  "f05_at_fixed_tau": 0.255368830348359,
+  "precision": 0.22337720832953376,
+  "recall": 0.7451292483531331,
+  "iou_ink": 0.2075213406729855,
+  "iou_bg": 0.4638930175992276,
+  "miou": 0.33570717913610654,
+  "ema": false,
+  "label_file": "ink_reg.npy"
+}

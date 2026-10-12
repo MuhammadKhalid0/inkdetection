@@ -1,0 +1,11 @@
+[
+  {
+    "run": "aux_shat_t192_s42",
+    "n_tiles": 1556,
+    "pearson_r": 0.9069511755994093,
+    "mae_layers": 1.2053700174434843,
+    "verdict": "TRACKS the surface",
+    "s_hat_mean": 13.530032600320464,
+    "s_ref_mean": 13.917095115681233
+  }
+]

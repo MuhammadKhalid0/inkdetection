@@ -1,0 +1,18 @@
+{
+  "run": "abl_stem",
+  "label_file": "ink_reg.npy",
+  "baseline": {
+    "f05": 0.7738337167355365,
+    "precision": 0.8686617392092842,
+    "recall": 0.5386328836084189,
+    "tau": 0.75
+  },
+  "postprocessed": {
+    "tau": 0.7,
+    "min_size": 10000,
+    "f05": 0.7929736000703369,
+    "precision": 0.8832971714075283,
+    "recall": 0.5627801268767074
+  },
+  "note": "tau+min_size selected on the VALIDATION segment (the designated selection set); component filter is label-free at inference time."
+}

@@ -1,0 +1,16 @@
+{
+  "run": "n_embedz2_t192_s42",
+  "select_on": "sweep",
+  "best_epoch": 51,
+  "best_f05": 0.7664806896441325,
+  "best_tau": 0.8,
+  "fixed_tau": 0.4,
+  "f05_at_fixed_tau": 0.6901826386299652,
+  "precision": 0.8328091535651624,
+  "recall": 0.5812941133026946,
+  "iou_ink": 0.5205473464317607,
+  "iou_bg": 0.9025788945948386,
+  "miou": 0.7115631205132997,
+  "ema": false,
+  "label_file": "ink_reg2.npy"
+}

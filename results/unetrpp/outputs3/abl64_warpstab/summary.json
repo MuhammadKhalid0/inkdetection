@@ -1,0 +1,16 @@
+{
+  "run": "abl64_warpstab",
+  "select_on": "sweep",
+  "best_epoch": 58,
+  "best_f05": 0.6411460881505368,
+  "best_tau": 0.75,
+  "fixed_tau": 0.4,
+  "f05_at_fixed_tau": 0.47632462339033077,
+  "precision": 0.7408292382368739,
+  "recall": 0.41680934589077845,
+  "iou_ink": 0.36376636956040753,
+  "iou_bg": 0.8706518168030022,
+  "miou": 0.6172090931817049,
+  "ema": false,
+  "label_file": "ink_reg.npy"
+}

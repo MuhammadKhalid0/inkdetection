@@ -1,0 +1,10 @@
+{
+  "run": "n_base_t192_r1_s43",
+  "seg": "20251115002740-auto_grown_20251115002740308_0_flatboi",
+  "ckpt": "/home/woody/iwi5/iwi5401h/nnFormer/outputs/n_base_t192_r1_s43/best.pt",
+  "epoch": 54,
+  "shape": [
+    11140,
+    49240
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "run": "abl64_ref_s44",
+  "seg": "20251115002740-auto_grown_20251115002740308_0_flatboi",
+  "ckpt": "/home/woody/iwi5/iwi5401h/vesuvius/outputs3/abl64_ref_s44/best.pt",
+  "epoch": 52,
+  "shape": [
+    11140,
+    49240
+  ]
+}

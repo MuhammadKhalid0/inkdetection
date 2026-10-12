@@ -1,0 +1,16 @@
+{
+  "run": "sf_stemiso_t192_s42",
+  "select_on": "sweep",
+  "best_epoch": 56,
+  "best_f05": 0.7692506821708681,
+  "best_tau": 0.85,
+  "fixed_tau": 0.4,
+  "f05_at_fixed_tau": 0.6398353680927569,
+  "precision": 0.8499645180480447,
+  "recall": 0.5574906381291073,
+  "iou_ink": 0.5075441888211949,
+  "iou_bg": 0.9015676420271637,
+  "miou": 0.7045559154241793,
+  "ema": false,
+  "label_file": "ink_reg.npy"
+}

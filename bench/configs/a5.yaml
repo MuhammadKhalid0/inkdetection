@@ -1,0 +1,61 @@
+# A5 — gamma-init sweep on A1 (safe-init vs trainability, methodology 3.15 / table A5).
+# Identical to A1 (depth attention, shared Q/K, absolute PE, learned-absolute collapse)
+# EXCEPT the depth-gate is initialised at gamma=0.5 instead of 0.1, to test whether a
+# stronger initial gate lets the depth branch extract more (A1's gamma barely moved).
+# Diff vs a1.yaml: model.da_gamma_init 0.1 -> 0.5, run_name a5.
+
+model:
+  name: unetrpp
+  feature_size: 16
+  dims: [32, 64, 128, 256]
+  depths: [3, 3, 3, 3]
+  num_heads: 4
+  patch_size: [1, 4, 4]
+  pe_mode: 2d
+  depth_attn: true
+  da_gamma_init: 0.5           # A5: stronger initial depth gate (A1 used 0.1)
+
+shared:
+  texture_stem: true
+  stem_out_extra: 8
+  collapse: learned
+
+data:
+  tile: 64
+  depth: 32
+  center_layer: 32
+  n_layers: 65
+  normalize: 255.0
+  pos_thresh: 0.05
+  samples_per_epoch: 4000
+  aug:
+    hflip: true
+    vflip: true
+    rot90: true
+    z_flip: true
+    z_flip_p: 0.5
+    z_shift: 2
+    z_shift_p: 0.3
+
+train:
+  loss: dice_bce
+  lr: 1.0e-4
+  weight_decay: 3.0e-5
+  epochs: 120
+  warmup_epochs: 3
+  batch: 16
+  num_workers: 8
+  amp: true
+  grad_clip: 1.0
+  val_tau: 0.4
+  sweep_every: 5
+  patience: 20
+  seed: 42
+
+infer:
+  stride: 32
+  batch: 32
+
+output:
+  dir: /home/woody/iwi5/iwi5401h/vesuvius/outputs
+  run_name: a5

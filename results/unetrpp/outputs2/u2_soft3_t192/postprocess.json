@@ -1,0 +1,18 @@
+{
+  "run": "u2_soft3_t192",
+  "label_file": "ink_reg.npy",
+  "baseline": {
+    "f05": 0.7676481356076452,
+    "precision": 0.8640392258064516,
+    "recall": 0.5307908106970102,
+    "tau": 0.55
+  },
+  "postprocessed": {
+    "tau": 0.55,
+    "min_size": 10000,
+    "f05": 0.7843000288367236,
+    "precision": 0.8997170414986234,
+    "recall": 0.518331003962889
+  },
+  "note": "tau+min_size selected on the VALIDATION segment (the designated selection set); component filter is label-free at inference time."
+}
